@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+		<!-- <p>Infer Size</p> -->
+		<!-- <Image src="https://picsum.photos/id/10/640" alt="" inferSize /> -->
+		<p>Widths (In Sizes)</p>
+		<Image src="https://picsum.photos/id/10/640" alt="" width="640" height="640"  widths={[640, 960, 1280]}/>
+		<p>Widths (Not In Sizes)</p>
+		<Image src="https://picsum.photos/id/10/640" alt="" width="600" height="600" widths={[600, 900, 1200]}/>
+		<p>Densities (In Sizes)</p>
+		<Image src="https://picsum.photos/id/10/640" alt="" width="640" height="640" densities={[1, 1.5, 2]} />
+		<p>Densities (Not In Sizes)</p>
+		<Image src="https://picsum.photos/id/10/640" alt="" width="600" height="600" densities={[1, 1.5, 2]} />
+	</body>
+	<style>
+		img {
+			width: 100%;
+			height: min-content;
+			object-fit: contain;
+		}
+	</style>
+</html>
